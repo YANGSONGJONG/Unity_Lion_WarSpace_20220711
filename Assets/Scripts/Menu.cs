@@ -45,6 +45,7 @@ namespace NRSUNG
         public Dropdown LanDropdown;
         //暫存語言Dropdown的ID值
         string SaveLanID = "SaveLanID";
+        public InputField[] Keyboards;
 
         private void Awake()
         {
@@ -57,7 +58,19 @@ namespace NRSUNG
 #if UNITY_ANDROID || UNITY_IOS
             SizeDropdown.interactable = false;
 #endif
+            Debug.Log(Staticvar.KeyboardsState[0]);
+            
+            if (Staticvar.KeyboardsState[0] == null || Staticvar.KeyboardsState[2] == null || Staticvar.KeyboardsState[3] == null)
+            {
+                Keyboards[0].text = "w";
+                Keyboards[1].text = "s";
+                Keyboards[2].text = "a";
+                Keyboards[3].text = "d";
+                for (int i = 0; i < Keyboards.Length; i++)
+                    Staticvar.KeyboardsState[i] = Keyboards[i].text;
+            }
         }
+
 
         // Start is called before the first frame update
         void Start()
@@ -144,12 +157,19 @@ namespace NRSUNG
                     Screen.SetResolution(480, 800, false);
                     break;
             }
+
         }
 
-        public void ChangeLan()
+            public void ChangeLan()
+            {
+                PlayerPrefs.SetInt(SaveLanID, LanDropdown.value);
+            }
+            //儲存按鍵設定 0=上,1=下,2=左,3=右
+           public void SetKeyboard(int ID)
         {
-            PlayerPrefs.SetInt(SaveLanID, LanDropdown.value);
+            Staticvar.KeyboardsState[ID] = Keyboards[ID].text;
         }
+        
     }
 }
 

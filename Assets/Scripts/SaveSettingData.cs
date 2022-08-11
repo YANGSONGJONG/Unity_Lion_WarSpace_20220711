@@ -5,7 +5,6 @@ using UnityEngine;
 using System.IO;
 //使用Unity UI程式庫
 using UnityEngine.UI;
-using UnityEditorInternal;
 
 public class SaveSettingData : MonoBehaviour
 {
@@ -29,6 +28,7 @@ public class SaveSettingData : MonoBehaviour
     public string[] Datas;
     WWW Reader;
     string ReaderPC;
+
 
     private void Awake()
     {
@@ -89,7 +89,8 @@ public class SaveSettingData : MonoBehaviour
                     //讀取路徑的文字檔內容
                     ReaderPC = File.ReadAllText(Path);
                     Datas = ReaderPC.Split('@');
-                    ScreenSizeDropdown.value = int.Parse(Datas[0]);
+                    //ScreenSizeDropdown.value = int.Parse(Datas[0]);
+                ScreenSizeDropdown.value = int.Parse(Datas[0]);
                     LanDropdown.value = int.Parse(Datas[1]);
                     break;
             }
