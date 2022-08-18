@@ -89,7 +89,6 @@ public class SaveSettingData : MonoBehaviour
                     //讀取路徑的文字檔內容
                     ReaderPC = File.ReadAllText(Path);
                     Datas = ReaderPC.Split('@');
-                    //ScreenSizeDropdown.value = int.Parse(Datas[0]);
                 ScreenSizeDropdown.value = int.Parse(Datas[0]);
                     LanDropdown.value = int.Parse(Datas[1]);
                     break;

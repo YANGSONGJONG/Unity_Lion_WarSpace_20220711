@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3735648936145971867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2382663207044279373}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2382663207044279373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3735648936145971867}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3819289533216200854}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -180}
 --- !u!1 &3819289533216687286
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,9 +43,10 @@ GameObject:
   - component: {fileID: 3819289533214431862}
   - component: {fileID: 3819289533216588309}
   - component: {fileID: 3819289533216588308}
+  - component: {fileID: 2015471277886304037}
   m_Layer: 0
   m_Name: vehicle_enemyShip
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +61,8 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.9, z: -1.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2382663207044279373}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -113,3 +145,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4960114, y: 0.46537304, z: 1.4170407}
   m_Center: {x: 0, y: -0.011736455, z: 0.3571212}
+--- !u!114 &2015471277886304037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3819289533216687286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f033090cb70a6ab49b7eefeae7fb61b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 2
+  DeleteTime: 10
+  Bullet: {fileID: 6595587106773085070, guid: 18c0e0a423679ef48921ce04fb2b62a6, type: 3}
+  SetTime: 1
+  TargetPoint: {fileID: 2382663207044279373}

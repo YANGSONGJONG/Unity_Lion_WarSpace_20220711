@@ -60,7 +60,7 @@ namespace NRSUNG
 #endif
             Debug.Log(Staticvar.KeyboardsState[0]);
             
-            if (Staticvar.KeyboardsState[0] == null || Staticvar.KeyboardsState[2] == null || Staticvar.KeyboardsState[3] == null)
+            /*if (Staticvar.KeyboardsState[0] == null || Staticvar.KeyboardsState[2] == null || Staticvar.KeyboardsState[3] == null)
             {
                 Keyboards[0].text = "w";
                 Keyboards[1].text = "s";
@@ -68,7 +68,7 @@ namespace NRSUNG
                 Keyboards[3].text = "d";
                 for (int i = 0; i < Keyboards.Length; i++)
                     Staticvar.KeyboardsState[i] = Keyboards[i].text;
-            }
+            }*/
         }
 
 
